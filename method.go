@@ -7,7 +7,7 @@ type Meower interface {
 }
 
 type Monkey struct {
-	Name string
+	Name  string
 	Color string
 }
 

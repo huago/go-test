@@ -1,9 +1,9 @@
 package test
 
 import (
-	"time"
-	"math/rand"
 	"fmt"
+	"math/rand"
+	"time"
 )
 
 func Rand100() {

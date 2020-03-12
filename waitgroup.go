@@ -30,3 +30,17 @@ func Go(wg *sync.WaitGroup, index int) {
 	fmt.Println(index, sum)
 	wg.Done()
 }
+
+func MultiPrint() {
+	wg := sync.WaitGroup{}
+	for i := 0; i < 10; i++ {
+		wg.Add(1)
+
+		go func(num int) {
+			fmt.Println(num)
+			wg.Done()
+		}(i)
+	}
+
+	wg.Wait()
+}

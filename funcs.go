@@ -5,7 +5,7 @@ import (
 	"reflect"
 )
 
-type MyFunc func (string, string) string
+type MyFunc func(string, string) string
 
 func DoFunc() {
 	var f = func() {
@@ -36,6 +36,29 @@ func AnonymousFuncChannel() {
 		return i + i2
 	}
 
-	fmt.Println("result", (<- c)(1, 2))
+	fmt.Println("result", (<-c)(1, 2))
 }
 
+func movep(a string, b string) {
+	fmt.Println(a, "->", b)
+}
+
+func Hanoi(n int, a string, b string, c string, total *int) {
+	if n == 1 {
+		movep(a, c)
+		*total += 1
+	} else {
+		Hanoi(n-1, a, c, b, total)
+		movep(a, c)
+		*total += 1
+		Hanoi(n-1, b, a, c, total)
+	}
+}
+
+func Age(n int) int {
+	if n == 1 {
+		return 10
+	}
+
+	return Age(n-1) + 2
+}

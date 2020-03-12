@@ -38,7 +38,7 @@ func Times() {
 				fmt.Println("Timeout.")
 				ok = false
 				break
-			case <- time.After(1 * time.Millisecond):
+			case <-time.After(1 * time.Millisecond):
 				fmt.Println("Dead.")
 				ok = false
 				break
@@ -54,4 +54,12 @@ func Times() {
 	}()
 
 	<-sign
+}
+
+func duration() {
+	var du_ms = 500 * time.Millisecond
+	var du_se = 12500 * time.Millisecond
+	var du_min = 2 * time.Minute
+
+	fmt.Printf("1=%v\n2=%v\n3=%v\n", du_ms, du_se, du_min)
 }

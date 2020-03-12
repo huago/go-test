@@ -74,8 +74,6 @@ func AppendValue() {
 	person.Wechat = "cup_chenyubo"
 	person.Phone = "18810114921"
 
-
-
 	personMap := make(map[string]interface{})
 	pValue := reflect.ValueOf(person)
 

@@ -1,4 +1,4 @@
-package test
+	package test
 
 import (
 	"fmt"
@@ -165,20 +165,20 @@ func CloseChan() {
 		ch <- i
 	}
 
-	close(ch)	//被关闭的channel，可以继续读，但是不能继续写
+	close(ch) //被关闭的channel，可以继续读，但是不能继续写
 
 	go func() {
 		var e int
 		ok := true
 
 		for {
-			select{
-				case e, ok = <- ch:
-					if !ok {
-						fmt.Println("End.")
-						break
-					}
-					fmt.Printf("ch -> %d\n", e)
+			select {
+			case e, ok = <-ch:
+				if !ok {
+					fmt.Println("End.")
+					break
+				}
+				fmt.Printf("ch -> %d\n", e)
 			}
 
 			if !ok {
@@ -189,5 +189,5 @@ func CloseChan() {
 		}
 	}()
 
-	<- sign
+	<-sign
 }

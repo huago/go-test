@@ -9,8 +9,6 @@ import (
 )
 
 func UnDes2() {
-	pass := "sodasoda"
-	des.
 }
 
 func UnDes() {

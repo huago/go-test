@@ -44,16 +44,15 @@ func TestPushPop(t *testing.T) {
 		}
 
 		m.Lock()
-		x := stack[length - 1]
-		stack = stack[:length - 1]
+		x := stack[length-1]
+		stack = stack[:length-1]
 		m.Unlock()
 
 		return x, nil
 	}
 
-	chs1 := make([] chan int, 7)
-	chs2 := make([] chan int, 7)
-
+	chs1 := make([]chan int, 7)
+	chs2 := make([]chan int, 7)
 
 	for i := 0; i < 7; i++ {
 		chs1[i] = make(chan int)
@@ -73,10 +72,10 @@ func TestPushPop(t *testing.T) {
 	}
 
 	for _, ch := range chs1 {
-		<- ch
+		<-ch
 	}
 
 	for _, ch := range chs2 {
-		<- ch
+		<-ch
 	}
 }

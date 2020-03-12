@@ -33,4 +33,3 @@ func TransferString() {
 func toString(bs []byte) string {
 	return *(*string)(unsafe.Pointer(&bs))
 }
-

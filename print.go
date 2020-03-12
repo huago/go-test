@@ -4,8 +4,8 @@ import "fmt"
 
 type Myname struct {
 	Name string
-	Sex string
-	Age int
+	Sex  string
+	Age  int
 }
 
 func PrintPlus() {

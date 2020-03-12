@@ -12,9 +12,9 @@ const Addr string = "beijing"
 const (
 	a string = "a"
 	b string = "b00000000000099999999999ddddddddddddddddddddddmmmmmmmmmmmmmmmmmmmmmmddddddddddd"
-	c = unsafe.Sizeof(b)
-	d = unsafe.Sizeof(100)
-	e = unsafe.Sizeof(1.23)
+	c        = unsafe.Sizeof(b)
+	d        = unsafe.Sizeof(100)
+	e        = unsafe.Sizeof(1.23)
 )
 
 func TestAdd(t *testing.T) {

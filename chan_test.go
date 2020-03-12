@@ -29,3 +29,7 @@ func TestDoOrder(t *testing.T) {
 func TestCloseChan(t *testing.T) {
 	CloseChan()
 }
+
+func TestSelectChannel(t *testing.T) {
+	SelectChannel()
+}
